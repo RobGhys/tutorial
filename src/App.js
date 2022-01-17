@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React from "react";
 
 function App() {
   return (
@@ -18,8 +19,26 @@ function App() {
           Learn React
         </a>
       </header>
+        <body>
+            <ShoppingList name="Marc" />
+        </body>
     </div>
   );
 }
 
 export default App;
+
+class ShoppingList extends React.Component {
+  render() {
+    return (
+        <div className="shopping-list">
+          <h1>Liste de courses pour {this.props.name}</h1>
+          <ul>
+            <li>Instagram</li>
+            <li>WhatsApp</li>
+            <li>Oculus</li>
+          </ul>
+        </div>
+    );
+  }
+}
